@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="report-container">
+    <button
+      *ngIf="buttons['Generate Reports']"
+      mat-raised-button
+      color="primary"
+    >
+     Generate Reports
+    </button>
+    <button *ngIf="buttons['Export Reports']" mat-raised-button color="primary">
+      Export Reports
+    </button>
+  </div>
+</div>

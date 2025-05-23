@@ -1,0 +1,17 @@
+.job-container {
+  display: flex;
+  border: 2px solid rgb(238, 238, 30);
+  width: fit-content;
+  justify-content: start;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5rem;
+  gap: 1rem;
+  width: 80%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: end;
+}

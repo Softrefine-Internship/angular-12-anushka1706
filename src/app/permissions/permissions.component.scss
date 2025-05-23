@@ -1,0 +1,17 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nested-children {
+  padding-left: 20px;
+}
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+  width: 100%;
+  margin-bottom: 2rem;
+}

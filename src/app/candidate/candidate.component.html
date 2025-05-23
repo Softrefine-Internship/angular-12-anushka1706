@@ -1,0 +1,27 @@
+<div class="container">
+    <button *ngIf="buttons['Add Candidate']" mat-raised-button color="accent">
+      Add Candidate
+    </button>
+  <div class="candidate-container">
+    <button *ngIf="buttons['View Candidate']" mat-raised-button color="primary">
+      View Candidate
+    </button>
+    <button
+      *ngIf="buttons['View Candidate Profile']"
+      mat-raised-button
+      color="primary"
+    >
+      View Candidate Profile
+    </button>
+    <button
+      *ngIf="buttons['View Candidate History']"
+      mat-raised-button
+      color="primary"
+    >
+      View Candidate History
+    </button>
+    <button *ngIf="buttons['Edit Candidate']" mat-raised-button color="primary">
+      Edit Candidate
+    </button>
+  </div>
+</div>

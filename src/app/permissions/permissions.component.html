@@ -1,0 +1,84 @@
+<div class="button-group">
+  <button mat-raised-button color="accent" (click)="onSetDefault()">
+    Set default
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onSelectAll(true)"
+    *ngIf="showButton"
+  >
+    Select All
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onDeselectAll(false)"
+    *ngIf="!showButton"
+  >
+    Deselect All
+  </button>
+</div>
+<mat-accordion>
+  <ng-container *ngFor="let parent of dataSource">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <div class="header-container">
+          <span>{{ parent.name }}</span>
+          <mat-slide-toggle
+            [checked]="parent.value"
+            [disabled]="parent.isDisable"
+            (change)="togglePermission(parent, parent, $event.checked)"
+          >
+          </mat-slide-toggle>
+        </div>
+      </mat-expansion-panel-header>
+
+      <div class="nested-children">
+        <ng-container *ngFor="let child of parent.permissions">
+          <ng-container
+            *ngTemplateOutlet="
+              renderNode;
+              context: {
+                node: child,
+                topParent: parent
+              }
+            "
+          ></ng-container>
+        </ng-container>
+      </div>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>
+
+<ng-template #renderNode let-node="node" let-topParent="topParent">
+  <mat-accordion multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <div class="header-container">
+          <span>{{ node.name }}</span>
+          <mat-slide-toggle
+            [checked]="node.value"
+            [disabled]="node.isDisable"
+            (change)="togglePermission(node, topParent, $event.checked)"
+          >
+          </mat-slide-toggle>
+        </div>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="node.permissions?.length" class="nested-children">
+        <ng-container *ngFor="let child of node.permissions">
+          <ng-container
+            *ngTemplateOutlet="
+              renderNode;
+              context: {
+                node: child,
+                topParent: topParent
+              }
+            "
+          ></ng-container>
+        </ng-container>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</ng-template>

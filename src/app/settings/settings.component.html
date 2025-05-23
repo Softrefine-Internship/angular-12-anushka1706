@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="settings-container">
+    <button
+      *ngIf="buttons['Manage Settings']"
+      mat-raised-button
+      color="primary"
+    >
+     Manage Settings
+    </button>
+    <button *ngIf="buttons['View Logs']" mat-raised-button color="primary">
+      View Logs
+    </button>
+  </div>
+</div>

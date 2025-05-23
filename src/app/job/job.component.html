@@ -1,0 +1,38 @@
+<div class="container">
+  <button mat-raised-button color="accent" *ngIf="buttons['Add Job']">
+    Add Job
+  </button>
+  <div class="job-container" *ngIf="buttons['View Job']">
+    Job 1
+    <button
+      *ngIf="buttons['View Applicants']"
+      mat-raised-button
+      color="primary"
+    >
+      Applicants
+    </button>
+    <button *ngIf="buttons['Edit Job']" mat-raised-button color="primary">
+      Edit Job
+    </button>
+    <button *ngIf="buttons['View Job Details']" mat-raised-button color="primary">
+      Details
+    </button>
+  </div>
+
+  <div class="job-container" *ngIf="buttons['View Job']">
+    Job 2
+    <button
+      *ngIf="buttons['View Applicants']"
+      mat-raised-button
+      color="primary"
+    >
+      Applicants
+    </button>
+    <button *ngIf="buttons['Edit Job']" mat-raised-button color="primary">
+      Edit Job
+    </button>
+    <button *ngIf="buttons['View Job Details']" mat-raised-button color="primary">
+      Details
+    </button>
+  </div>
+</div>
