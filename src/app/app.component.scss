@@ -1,0 +1,27 @@
+// .sidenavbar {
+//   display: flex;
+//   flex-direction: column; 
+//   width: 100%;
+// }
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: #585252;
+  transition: background-color 0.4s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.links:hover {
+  background-color: rgb(192, 191, 191);
+}
+.main-content{
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  width: 100%;
+}

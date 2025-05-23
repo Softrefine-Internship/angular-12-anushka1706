@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="department-container">
+    <button
+      *ngIf="buttons['View Departments']"
+      mat-raised-button
+      color="primary"
+    >
+      View departments
+    </button>
+    <button *ngIf="buttons['Manage Departments']" mat-raised-button color="primary">
+      Manage Departments
+    </button>
+  </div>
+</div>
